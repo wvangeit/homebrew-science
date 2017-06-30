@@ -1,7 +1,7 @@
 class Neuron < Formula
+  desc "Simulation environment for modeling neurons and networks"
   homepage "http://www.neuron.yale.edu/neuron/"
-  desc "Neuron is a simulation environment for modeling individual neurons and networks of neurons"
-  url "http://www.neuron.yale.edu/ftp/neuron/versions/v7.4/nrn-7.4.tar.gz"
+  url "https://www.neuron.yale.edu/ftp/neuron/versions/v7.4/nrn-7.4.tar.gz"
   sha256 "1403ba16b2b329d2376f4bf007d96e6bf2992fa850f137f1068ad5b22b432de6"
 
   head "http://www.neuron.yale.edu/hg/neuron/nrn", :using => :hg
@@ -55,8 +55,7 @@ class Neuron < Formula
     end
 
     # Neuron builds some .apps which are useless and in the wrong place
-    ["idraw", "mknrndll", "modlunit",
-     "mos2nrn", "neurondemo", "nrngui"].each do |app|
+    %w[idraw mknrndll modlunit mos2nrn neurondemo nrngui].each do |app|
       rm_rf "#{prefix}/../#{app}.app"
     end
 
@@ -66,8 +65,7 @@ class Neuron < Formula
     ln_sf Dir["#{libexec}/lib/*.la"], lib
     ln_sf Dir["#{libexec}/lib/*.o"], lib
 
-    ["hoc_ed", "ivoc", "modlunit", "mos2nrn", "neurondemo",
-     "nocmodl", "nrngui", "nrniv", "nrnivmodl", "sortspike"].each do |exe|
+    %w[hoc_ed ivoc modlunit mos2nrn neurondemo nocmodl nrngui nrniv nrnivmodl sortspike].each do |exe|
       bin.install_symlink "#{libexec}/bin/#{exe}"
     end
   end
