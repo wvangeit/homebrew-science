@@ -1,7 +1,7 @@
 class Neuron < Formula
   desc "Simulation environment for modeling neurons and networks"
   homepage "http://www.neuron.yale.edu/neuron/"
-  url "https://www.neuron.yale.edu/ftp/neuron/versions/v7.4/nrn-7.4.tar.gz"
+  url "https://www.neuron.yale.edu/ftp/neuron/versions/v7.4/v7.4.rel-1370/nrn-7.4.rel-1370.tar.gz"
   sha256 "1403ba16b2b329d2376f4bf007d96e6bf2992fa850f137f1068ad5b22b432de6"
 
   head "http://www.neuron.yale.edu/hg/neuron/nrn", :using => :hg
